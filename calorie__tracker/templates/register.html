@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="login">
+    <form method="POST" action="" class="login-form">
+        {% csrf_token %}
+        {{form.username.label}}
+        {{form.username}}
+        <br>
+        <br>
+        {{form.email.label}}
+        {{form.email}}
+        <br>
+        <br>
+        {{form.first_name.label}}
+        {{form.first_name}}
+        <br>
+        <br>
+        {{form.last_name.label}}
+        {{form.last_name}}
+        <br>
+        <br>
+        {{form.password1.label}}
+        {{form.password1}}
+        <br>
+        <br>
+        {{form.password2.label}}
+        {{form.password2}}
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="d-flex justify-content-center links mt-8">
+      Already have an account? <a href="{% url 'login' %}" class="ml-4">Login</a>
+    </div>
+</div>
+
+{% endblock content %}
